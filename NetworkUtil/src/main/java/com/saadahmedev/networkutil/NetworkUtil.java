@@ -1,11 +1,14 @@
 package com.saadahmedev.networkutil;
 
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
+import com.saadahmedev.networkutil.receiver.ConnectivityReceiver;
 import com.saadahmedev.networkutil.utils.Constants;
 import com.saadahmedev.networkutil.utils.TaskType;
 
@@ -49,7 +52,10 @@ public class NetworkUtil {
     }
     
     public void registerBroadcastReceiver() {
-        //
+        BroadcastReceiver receiver = new ConnectivityReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        context.registerReceiver(receiver, intentFilter);
     }
 
     private static void doTask() {
