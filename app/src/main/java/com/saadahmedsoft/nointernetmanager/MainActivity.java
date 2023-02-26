@@ -3,6 +3,7 @@ package com.saadahmedsoft.nointernetmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.saadahmedev.networkutil.NetworkUtil;
 
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (NetworkUtil.isInternetAvailable()) {}
+        new Handler().postDelayed(() -> {
+            if (NetworkUtil.isInternetAvailable()) {}
+        }, 1000);
     }
 }

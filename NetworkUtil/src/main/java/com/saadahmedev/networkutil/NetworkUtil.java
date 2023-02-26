@@ -19,6 +19,7 @@ package com.saadahmedev.networkutil;
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -26,6 +27,7 @@ import android.widget.Toast;
 
 import com.saadahmedev.networkutil.receiver.ConnectivityReceiver;
 import com.saadahmedev.networkutil.utils.Constants;
+import com.saadahmedev.networkutil.utils.NoInternetActivity;
 import com.saadahmedev.networkutil.utils.TaskType;
 
 public class NetworkUtil {
@@ -80,6 +82,13 @@ public class NetworkUtil {
                 break;
             case SHOW_TOAST_MESSAGE:
                 Toast.makeText(context, Constants.NO_INTERNET_AVAILABLE, Toast.LENGTH_SHORT).show();
+                break;
+            case SHOW_NO_INTERNET_DIALOG:
+                break;
+            case SHOW_NO_INTERNET_ACTIVITY:
+                Intent intent = new Intent(context, NoInternetActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
                 break;
         }
     }

@@ -12,7 +12,7 @@ public class App extends Application {
         super.onCreate();
 
         NetworkUtil.initialize(this)
-                .doIfNoInternetAvailable(TaskType.SHOW_TOAST_MESSAGE)
+                .doIfNoInternetAvailable(TaskType.SHOW_NO_INTERNET_ACTIVITY)
                 .registerBroadcastReceiver();
     }
 }
