@@ -13,9 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NetworkUtil networkUtil = NetworkUtil.getInstance(this);
-        if (networkUtil.isInternetAvailable(NetworkUtil.SHOW_TOAST_MESSAGE)) {
-            //has
-        }
+        if (NetworkUtil.isInternetAvailable()) {}
     }
 }
