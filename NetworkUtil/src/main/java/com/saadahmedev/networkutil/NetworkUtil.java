@@ -25,7 +25,7 @@ public class NetworkUtil {
     }
 
     public static boolean isInternetAvailable() {
-        if (context == null) throw new RuntimeException("Context hasn't been initialized yet");
+        if (context == null) throw new RuntimeException("NetworkUtil hasn't been initialized yet");
         return checkInternet(context, true);
     }
 
