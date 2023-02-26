@@ -54,7 +54,7 @@ public class NetworkUtil {
     public void registerBroadcastReceiver() {
         BroadcastReceiver receiver = new ConnectivityReceiver();
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        intentFilter.addAction(Constants.INTENT_FILTER_ACTION);
         context.registerReceiver(receiver, intentFilter);
     }
 
