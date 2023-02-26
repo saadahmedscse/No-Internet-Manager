@@ -32,7 +32,7 @@ public class ConnectivityReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (Constants.INTENT_FILTER_ACTION.equals(intent.getAction())) {
             if (executed && NetworkUtil.isInternetAvailable(context)) {
-                Toast.makeText(context, "Connections restored", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, Constants.CONNECTION_RESTORED, Toast.LENGTH_SHORT).show();
                 return;
             }
             if (executed && !NetworkUtil.isInternetAvailable(context)) {
